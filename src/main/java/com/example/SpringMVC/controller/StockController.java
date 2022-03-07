@@ -109,8 +109,9 @@ public class StockController {
 		}
 		Stock s= stocks.get(0);
 	    s.setTicker(stonk.getTicker());
+	    double temp=s.getQuantity();
 	    s.setQuantity(stonk.getQuantity()+s.getQuantity());
-	    s.setPurchasePrice((stonk.getPurchasePrice()*stonk.getQuantity()+s.getQuantity()*s.getPurchasePrice())/(stonk.getQuantity()+s.getQuantity()));
+	    s.setPurchasePrice((stonk.getPurchasePrice()*stonk.getQuantity()+temp*s.getPurchasePrice())/s.getQuantity());
 	    Stock updatedStock=stockRepo.save(s);
 	    return ResponseEntity.ok(updatedStock);
 	}
