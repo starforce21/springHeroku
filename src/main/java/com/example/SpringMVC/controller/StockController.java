@@ -19,7 +19,7 @@ import com.example.SpringMVC.repository.WatchListRepository;
 import com.example.SpringMVC.model.Stock;
 import com.example.SpringMVC.model.WatchList;
 
-@CrossOrigin(origins="https://starforce21.github.io")
+@CrossOrigin(origins="https://starforce21.github.io","https://localhost:3000")
 @RestController
 @RequestMapping("/api/")
 public class StockController {
